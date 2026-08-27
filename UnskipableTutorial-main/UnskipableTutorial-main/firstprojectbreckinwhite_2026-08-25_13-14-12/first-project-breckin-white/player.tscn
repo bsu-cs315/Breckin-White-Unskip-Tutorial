@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b0d662o7iyh60"]
+
+[ext_resource type="Texture2D" uid="uid://dbmgwhgblmuc7" path="res://playerGrey_up2.png" id="1_hqtel"]
+[ext_resource type="Texture2D" uid="uid://bkortn88w82x" path="res://playerGrey_walk2.png" id="3_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://1jrncs1ydpgn" path="res://playerGrey_walk1.png" id="4_1jxqw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i3pqv"]
+load_path = "res://.godot/imported/playerGrey_up1.png-3aa61131c0882580ef256c2e63b2c4f5.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rrnty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hqtel")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_i3pqv")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2hs0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1jxqw")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k3tga"]
+radius = 69.0
+height = 152.0
+
+[node name="Player" type="Area2D" unique_id=320414234]
+position = Vector2(1, 2)
+rotation = 1.5707964
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1980048428]
+sprite_frames = SubResource("SpriteFrames_rrnty")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1874031653]
+shape = SubResource("CapsuleShape2D_k3tga")
